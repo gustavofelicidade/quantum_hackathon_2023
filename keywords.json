@@ -1,1 +1,4 @@
-{"aministração": [["taxa", "porcento"], ["taxa", "%"], ["financeiro", "porcento"], ["financeiro", "%"]]}
+{"administração": [["taxa", "porcento"], ["taxa", "%"], ["financeiro", "porcento"], ["financeiro", "%"], ["R$"], ["reais"], ["financeira", "taxa"], ["financeiro", "taxa"], ["mensal", "mínimo"]]
+ "social": [["fim", "exercício"],["fim", "exercicio"], ["janeiro"], ["fevereiro"], ["março"], ["abril"], ["maio"], ["junho"], ["julho"], ["agosto"],["setembro"], ["outubro"], ["novembro"], ["dezembro"]]
+ "resgate":[["pagamento"],["cota"],["conversão"],["conversao"]]
+}
