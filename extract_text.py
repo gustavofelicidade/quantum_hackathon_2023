@@ -11,5 +11,34 @@ for page_num in range(len(pdf_reader.pages)):
 
 pdf_file.close()
 
-print(text)
+
+print(sorted(list(set(text))))
+text = text.replace('-', '')
+text = text.replace('_', '')
+text = text.replace('“', '')
+text = text.replace('”', '')
+text = text.replace('@', '')
+text = text.replace('(', '')
+text = text.replace(')', '')
+
+#print(text[12000:14000].replace('\n', ''))
 print("Número de caracteres extraídos: ", len(text))
+
+words = ["administração", "social", "cota", "%", "taxa"]
+window_size = 10
+
+extracted_text = []
+
+for word in words:
+    start_index = 0
+    while True:
+        start_index = text.find(word, start_index)
+        if start_index == -1:
+            break
+        context_start = max(0, start_index - window_size)
+        context_end = min(len(text), start_index + len(word) + window_size)
+        extracted_text.append(text[context_start:context_end])
+        start_index += 1
+
+print(extracted_text)
+
