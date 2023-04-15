@@ -2,7 +2,7 @@ import PyPDF2
 import re
 
 
-def extract(pdf_name, parameter_type, keyword, word_list, window_size=200):
+def extract(pdf_name, keyword, word_list, window_size=200):
     """
     This function takes a text string, a keyword string, a list of words, and a window size, and returns a list of contexts
     that contain the keyword string and all of the words in the list. The window size determines how many words before and
@@ -34,18 +34,8 @@ def extract(pdf_name, parameter_type, keyword, word_list, window_size=200):
     text = text.replace(')', '')
     text = text.replace('\n', '')
     text = text.replace('º', '')
-
-    if parameter_type == 'romanos':
-        text_re = re.split(r'^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$.'  , text)
     
     text = text.lower()
-
-    if parameter_type == 'artigos':
-        text_re = re.split(r'artigo \d+'  , text)
-    if parameter_type == 'numerico':
-        text_re = re.split(r'\d+. |\d+.\d+. '  , text)
-
-
 
     def words_context(text, words, window_size=5):
         extracted_text = []
@@ -95,5 +85,9 @@ def extract(pdf_name, parameter_type, keyword, word_list, window_size=200):
 
     return context_list
 
+#print(extract("4UM Investimentos.pdf", "administração", ["taxa", '%']))
+
+#print(extract("Banco Daycoval.pdf", "numerico", "administração", ["taxa"]))
+#print(extract("Ativa Investimentos.pdf", "numerico", "social", ["dezembro"], 200))
 
 
