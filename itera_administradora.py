@@ -11,8 +11,6 @@ def read_pdfs(num_pdfs):
 
     #  Se não for PDF converta para PDF:
 
-
-
     for file_name in pdf_files:
         file_path = os.path.join(folder_path, file_name)
         with open(file_path, 'rb') as pdf_file:
