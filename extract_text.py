@@ -95,9 +95,5 @@ def extract(pdf_name, parameter_type, keyword, word_list, window_size=200):
 
     return context_list
 
-#print(extract("4UM Investimentos.pdf", "artigos", "administração", ["taxa", '%']))
-#print('\n')
-#print(extract("Banco Daycoval.pdf", "numerico", "administração", ["taxa"]))
-print(extract("Ativa Investimentos.pdf", "numerico", "social", ["dezembro"], 200))
 
 
