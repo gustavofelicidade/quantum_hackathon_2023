@@ -1,6 +1,6 @@
 import os
 from PyPDF4 import PdfFileReader
-
+import docx_to_pdf
 # Para cada PDF na pasta data
 def read_pdfs(num_pdfs):
     folder_path = './data'
@@ -15,20 +15,6 @@ def read_pdfs(num_pdfs):
         file_path = os.path.join(folder_path, file_name)
         with open(file_path, 'rb') as pdf_file:
             pdf_reader = PdfFileReader(pdf_file)
-
-            #===================================================================
-            #  Adicionar Funções do extract_text.py
-            #===================================================================
-            text = ''
-            for page_num in range(pdf_reader.getNumPages()):
-                page_obj = pdf_reader.getPage(page_num)
-                text += page_obj.extractText()
-
-
-            print(text)
-            # extrair o texto de todas as páginas do PDF e imprimir na tela
-            pdf_file.close()
-            #===================================================================
 
 
             #===================================================================
